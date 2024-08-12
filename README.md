@@ -71,7 +71,7 @@ Extract the `.dat` files and place them in a `models/` directory within your pro
 Run the application using the following command:
 
 ```bash
-python attendance_app.py
+python app.py
 ```
 
 ## Usage
