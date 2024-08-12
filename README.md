@@ -43,7 +43,12 @@ The Face Recognition Attendance System is a Python-based application that automa
    pip install -r requirements.txt
    ```
 
-3. **Run the Application:**
+3. **Install Model:**
+   ```bash
+   pip install git+https://github.com/ageitgey/face_recognition_models
+   ```
+
+4. **Run the Application:**
    ```bash
    python attendance_app.py
    ```
