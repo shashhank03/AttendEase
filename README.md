@@ -1,84 +1,96 @@
 # AttendEase
-Here's a README file for your Face Recognition Attendance System project:
 
 ---
 
 # Face Recognition Attendance System
 
-## Overview
-
-The Face Recognition Attendance System is a Python-based application that automates the process of taking attendance using face recognition technology. The system uses a webcam to capture images of students, matches them against a pre-trained dataset of student images, and records attendance in real-time.
+This project is a **Face Recognition Attendance System** built using **Python** and **Tkinter**. The system leverages the power of **Dlib’s ResNet-34 face recognition model** for real-time face detection and recognition. This application allows you to register students, take attendance using a webcam, and view attendance records for different subjects.
 
 ## Features
 
-- **Student Registration:** Easily register new students by uploading their images through the interface.
-- **Automated Attendance:** Capture real-time attendance through a webcam. The system recognizes multiple faces simultaneously and marks attendance for the recognized individuals.
-- **View Attendance Records:** View and manage attendance records for different subjects directly from the application.
+- **Student Registration**: Register new students by uploading their images.
+- **Real-time Attendance**: Take attendance in real-time using your webcam. The system recognizes faces and marks attendance automatically.
+- **View Attendance Records**: Easily view attendance records for different subjects.
 
-## Technologies Used
+## Technologies and Models Used
 
-- **Programming Language:** Python
-- **Libraries:**
-  - `tkinter`: For building the graphical user interface (GUI).
-  - `face_recognition`: For face detection and recognition, utilizing HOG and CNN models.
-  - `OpenCV`: For image processing and webcam integration.
-  - `NumPy`: For numerical operations.
-  - `Pandas`: For handling attendance records.
+- **Python**: Core programming language used for the project.
+- **Tkinter**: GUI library for Python used to create the application's interface.
+- **OpenCV**: Used for capturing and processing images from the webcam.
+- **Dlib**: 
+  - **Face Detection**: Utilizes Dlib’s HOG-based or CNN-based face detector.
+  - **Face Recognition**: Uses Dlib’s ResNet-34 model for generating 128-dimensional face embeddings.
+- **Face Recognition Library**: Simplifies the process of face recognition using Dlib’s models.
 
-## Model Accuracy
+## Accuracy and Performance
 
-- **Face Recognition Accuracy:** Approximately **95%** under optimal conditions (good lighting and clear visibility).
-- **Haar Cascade Classifier Accuracy:** Around **90-95%** for face detection in typical scenarios.
+- The face recognition model based on **Dlib's ResNet-34** architecture achieves an accuracy of approximately **99.38%** on the LFW (Labeled Faces in the Wild) dataset.
+- The system can recognize multiple faces simultaneously and can handle varying lighting conditions and angles with high robustness.
 
 ## Installation
 
-1. **Clone the Repository:**
-   ```bash
-   git clone https://github.com/your-username/face-recognition-attendance-system.git
-   cd face-recognition-attendance-system
-   ```
+### Prerequisites
 
-2. **Install Required Libraries:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+- **Python 3.6+** should be installed on your system.
 
-3. **Install Model:**
-   ```bash
-   pip install git+https://github.com/ageitgey/face_recognition_models
-   ```
+### Step 1: Clone the Repository
 
-4. **Run the Application:**
-   ```bash
-   python attendance_app.py
-   ```
-
-## How to Use
-
-1. **Register New Student:**
-   - Open the application.
-   - Click on "Register" and enter the student's name.
-   - Select and upload the student's image.
-
-2. **Take Attendance:**
-   - Enter the subject name.
-   - Click on "Start Attendance."
-   - The system will capture images via the webcam and mark attendance for recognized faces.
-
-3. **View Attendance:**
-   - Click on "View Attendance."
-   - Enter the subject name to view the attendance records.
-
-## Directory Structure
-
+```bash
+git clone https://github.com/yourusername/face-recognition-attendance-system.git
+cd face-recognition-attendance-system
 ```
-face-recognition-attendance-system/
-│
-├── attendance_app.py          # Main application file
-├── utils.py                   # Utility functions for image processing and attendance
-├── student_images/            # Directory to store registered student images
-├── attendance_records/        # Directory to store attendance records
-└── requirements.txt           # List of required libraries
+
+### Step 2: Install Dependencies
+
+Install the required Python packages:
+
+```bash
+pip install opencv-python
+pip install numpy
+pip install dlib
+pip install git+https://github.com/ageitgey/face_recognition_models
+pip install face_recognition
+pip install pandas
+```
+
+### Step 3: Download Dlib Models
+
+Ensure you have the required Dlib models:
+
+- **Shape Predictor**: `shape_predictor_68_face_landmarks.dat`
+- **Face Recognition Model**: `dlib_face_recognition_resnet_model_v1.dat`
+
+You can download these models from the Dlib model downloads page:
+- [Shape Predictor](http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2)
+- [Face Recognition Model](http://dlib.net/files/dlib_face_recognition_resnet_model_v1.dat.bz2)
+
+Extract the `.dat` files and place them in a `models/` directory within your project.
+
+### Step 4: Run the Application
+
+Run the application using the following command:
+
+```bash
+python attendance_app.py
+```
+
+## Usage
+
+1. **Register a New Student**: Click on "Register", enter the student's name, and upload their image.
+2. **Start Attendance**: Enter the subject name and click "Start Attendance". The system will use the webcam to recognize faces and mark attendance.
+3. **View Attendance**: Click on "View Attendance", enter the subject name, and the attendance records will be displayed.
+
+## Project Structure
+
+```plaintext
+├── attendance_app.py        # Main application file
+├── utils.py                 # Utility functions for face recognition and attendance
+├── student_images/          # Folder containing registered student images
+├── attendance_records/      # Folder where attendance records are saved
+├── models/                  # Folder containing Dlib's pre-trained models
+│   ├── shape_predictor_68_face_landmarks.dat
+│   └── dlib_face_recognition_resnet_model_v1.dat
+└── README.md                # This file
 ```
 
 ## Future Enhancements
@@ -90,8 +102,6 @@ face-recognition-attendance-system/
 
 ## Acknowledgments
 
-- Special thanks to the developers of the `face_recognition` and `OpenCV` libraries for providing robust tools for face detection and recognition.
+- Special thanks to the developers of the `face_recognition`,`Dlib` and `OpenCV` libraries for providing robust tools for face detection and recognition.
 
 ---
-
-This README provides an overview of your project, including how to install, run, and use it, along with a description of its features, technologies, and potential future enhancements.
