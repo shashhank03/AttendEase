@@ -45,12 +45,9 @@ cd face-recognition-attendance-system
 Install the required Python packages:
 
 ```bash
-pip install opencv-python
-pip install numpy
-pip install dlib
+pip install requirements.txt
 pip install git+https://github.com/ageitgey/face_recognition_models
-pip install face_recognition
-pip install pandas
+
 ```
 
 ### Step 3: Download Dlib Models
